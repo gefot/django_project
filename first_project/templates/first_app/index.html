@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% load static %}
+{% load staticfiles %}
 
 <html lang="en">
 <head>
@@ -10,7 +10,26 @@
 <body>
 
 <h1>This is a picture of Django</h1>
-<p>{{insert_me}}</p>
+<div class="djangotwo">
+    {% if access_records %}
+    <h2>Here are your access records:</h2>
+    <table>
+        <th>Site Name</th>
+        <th>Date Accessed</th>
+        {% for acc in access_records %}
+        <tr>
+            <td>{{ acc.name }}</td>
+            <td>{{ acc.date }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <h2>No access records found</h2>
+    {% endif %}
+
+
+</div>
+<hr>
 <img src="{% static "first_app/images/django.jpg" %}" alt="My image"/>
 
 </body>
