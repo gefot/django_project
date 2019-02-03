@@ -6,6 +6,7 @@ def check_for_z(value):
     if value[0] != 'z':
         raise forms.ValidationError("NEEDS TO START WITH Z")
 
+
 class FormName(forms.Form):
     mac_address = forms.CharField(max_length=15, validators=[validators.MaxLengthValidator(12)])
     description = forms.CharField(max_length=30)
@@ -25,4 +26,3 @@ class FormName(forms.Form):
     #     if len(botcatcher) > 0:
     #         raise forms.ValidationError("GOTCHA BOT!")
     #     return botcatcher
-
