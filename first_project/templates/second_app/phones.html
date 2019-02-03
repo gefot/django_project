@@ -1,10 +1,40 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>IP Phones</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'second_app/css/my_style.css' %}">
 </head>
 <body>
+<div class="container">
+    <h1>Hello! This is the Django second app!</h1>
+
+    {% if devices %}
+    <h2>Here are your access records:</h2>
+    <table class="table">
+        <th>MAC address</th>
+        <th>Description</th>
+        <th>Extension</th>
+        <th>Status</th>
+        <th>Timestatmp</th>
+        {% for dev in devices %}
+        <tr>
+            <td>{{ dev.mac_address }}</td>
+            <td>{{ dev.description }}</td>
+            <td>{{ dev.dn }}</td>
+            <td>{{ dev.registration_status }}</td>
+            <td>{{ dev.timestamp }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <h2>No access records found</h2>
+    {% endif %}
+
+</div>
 
 </body>
 </html>

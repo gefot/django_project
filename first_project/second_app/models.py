@@ -1,3 +1,6 @@
+# python manage.py migrate
+# python manage.py makemigrations
+
 from django.db import models
 from datetime import datetime
 
@@ -19,4 +22,4 @@ class Device(models.Model):
     timestamp = models.DateTimeField(default=datetime.now())
 
     def __str__(self):
-        return "{} - {} - {} - {} - {}".format(self.mac_address, self.description, self.dn, self.registration_status, self.timestamp)
+        return "{} - {}".format(self.mac_address, self.dn)
