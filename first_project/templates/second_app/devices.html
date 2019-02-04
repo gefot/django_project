@@ -16,16 +16,14 @@
     <h2>Here are your access records:</h2>
     <table class="table">
         <th>MAC address</th>
-        <th>Description</th>
         <th>Extension</th>
         <th>Status</th>
         <th>Timestatmp</th>
         {% for dev in devices %}
         <tr>
             <td>{{ dev.mac_address }}</td>
-            <td>{{ dev.description }}</td>
-            <td>{{ dev.dn }}</td>
-            <td>{{ dev.registration_status }}</td>
+            <td>{{ dev.extension }}</td>
+            <td>{{ dev.status }}</td>
             <td>{{ dev.timestamp }}</td>
         </tr>
         {% endfor %}

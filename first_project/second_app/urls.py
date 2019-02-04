@@ -3,6 +3,8 @@ from second_app import views
 
 
 urlpatterns =[
-    url(r'^$', views.second_app_main, name='second_app_main'),
-    url(r'forms/', views.second_app_main_forms, name='second_app_main_forms')
+    url(r'^$', views.index, name='index'),
+    url(r'devices', views.second_app_devices, name='second_app_devices'),
+    url(r'users/', views.second_app_users, name='second_app_users'),
+    url(r'forms/', views.second_app_forms, name='second_app_forms')
 ]
