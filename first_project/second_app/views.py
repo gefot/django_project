@@ -5,7 +5,8 @@ from second_app.forms import UserForm
 
 # Create your views here.
 def index(request):
-    return render(request, 'second_app/index.html')
+    context_dict = {'text': 'hello world', 'number': '1000'}
+    return render(request, 'second_app/index.html', context_dict)
 
 
 def second_app_devices(request):
