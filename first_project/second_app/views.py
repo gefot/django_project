@@ -29,11 +29,9 @@ def second_app_users(request):
         else:
             print('Error: Form Invalid')
 
-    return render(request, 'second_app/users.html', {'form':form})
+    return render(request, 'second_app/users.html', {'form': form})
 
 
 def second_app_forms(request):
-    pass
+    form = {}
     return render(request, 'second_app/forms.html', {'form': form})
-
-

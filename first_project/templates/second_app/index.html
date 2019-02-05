@@ -5,9 +5,13 @@
     <title>Main</title>
 </head>
 <body>
-<h1>Go to /devices</h1>
-<h1>Go to /users</h1>
-<h1>Go to /forms</h1>
+
+<h1>Welcom to index!</h1>
+<h1>Go to <a href="{% url 'second_app:second_app_devices' %}">devices/</a></h1>
+<h1>Go to <a href="{% url 'second_app:second_app_users' %}">users/</a></h1>
+<h1>Go to <a href="{% url 'second_app:second_app_forms' %}">forms/</a></h1>
+<hr>
+<h1>Go to <a href="{% url 'admin:index' %}">admin/</a></h1>
 
 </body>
 </html>
