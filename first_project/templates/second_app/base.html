@@ -20,12 +20,14 @@
             <li><a class="navbar-link" href="{% url 'second_app:second_app_forms' %}">Forms</a></li>
         </ul>
     </div>
-
-    <div class="container">
-        {% block body_block %}
-        <!--Anything outside of it will be inherited if you extend-->
-        {% endblock %}
-    </div>
 </nav>
+
+<div class="container">
+    {% block body_block %}
+        <!--Anything outside of it will be inherited if you extend-->
+    {% endblock %}
+</div>
+
+
 </body>
 </html>
