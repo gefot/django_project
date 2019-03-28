@@ -1,9 +1,36 @@
 from django.shortcuts import render
+from django.views.generic import TemplateView, ListView, DetailView
+
 from second_app.models import Device, User
 from second_app.forms import UserForm
 
 
-# Create your views here.
+# Class Based Views
+class IndexView(TemplateView):
+    template_name = 'second_app/index.html'
+
+    # context_dict = {'text': 'hello world', 'number': '1000'}
+
+    def get_context_data(self, **kwargs):
+        context_dict = super().get_context_data(**kwargs)
+        context_dict['text'] = 'hello world'
+        context_dict['number'] = '1000'
+        return context_dict
+
+
+class SecondAppDeviceListView(ListView):
+    model = Device
+    template_name = 'second_app/devices.html'
+    context_object_name = 'devices'
+
+
+# class SecondAppDeviceDetailedView(DetailView):
+#     context_object_name = 'devices_detail'
+#     model = Device
+#     template_name = 'second_app/devices.html'
+
+
+# Function Views
 def index(request):
     context_dict = {'text': 'hello world', 'number': '1000'}
     return render(request, 'second_app/index.html', context_dict)
